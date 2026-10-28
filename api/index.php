@@ -1,6 +1,6 @@
 <?php
 
-// 1. Buat folder sementara yang butuh akses simpan/tulis di /tmp
+// Buat folder temporary writable di Vercel
 $directories = [
     '/tmp/views',
     '/tmp/bootstrap/cache',
@@ -16,7 +16,10 @@ foreach ($directories as $dir) {
     }
 }
 
-// 2. Alihkan lokasi cache bootstrap Laravel ke direktori /tmp
+// Paksa Laravel menggunakan driver MySQL dari Environment Variables
+putenv('DB_CONNECTION=mysql');
+$_ENV['DB_CONNECTION'] = 'mysql';
+
 putenv('APP_CONFIG_CACHE=/tmp/bootstrap/cache/config.php');
 putenv('APP_SERVICES_CACHE=/tmp/bootstrap/cache/services.php');
 putenv('APP_PACKAGES_CACHE=/tmp/bootstrap/cache/packages.php');
@@ -37,5 +40,4 @@ $_ENV['CACHE_STORE'] = 'array';
 $_ENV['SESSION_DRIVER'] = 'cookie';
 $_ENV['LOG_CHANNEL'] = 'stderr';
 
-// 3. Jalankan aplikasi Laravel dari public/index.php
 require __DIR__ . '/../public/index.php';
