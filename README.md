@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TailAdmin Laravel - Tailwind CSS Free Laravel Dashboard
 
 **TailAdmin Laravel** is a modern, production-ready admin dashboard template powered by **Laravel 12**, **Tailwind CSS v4**, **Alpine.js**, and a clean, modular architecture. TailAdmin is one of the most popular Tailwind CSS dashboard now also available for Larvael. It’s designed for building fast, scalable admin panels, CRM dashboards, SaaS backends, and any data-driven application where clarity and performance matter.
@@ -528,3 +529,7 @@ php artisan optimize:clear
 ## License
 
 Refer to our [LICENSE](https://tailadmin.com/license) page for more information.
+=======
+# Toosmile
+Projek pemweb
+>>>>>>> 5e8e2e3bcfae934742d8d7ed066fa11b3593effd
