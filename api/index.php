@@ -1,6 +1,5 @@
 <?php
 
-// Buat folder temporary writable di Vercel
 $directories = [
     '/tmp/views',
     '/tmp/bootstrap/cache',
@@ -16,7 +15,14 @@ foreach ($directories as $dir) {
     }
 }
 
-// Paksa Laravel menggunakan driver MySQL dari Environment Variables
+// Teruskan variabel database Vercel ke runtime PHP Laravel
+foreach (['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD'] as $key) {
+    if ($val = getenv($key)) {
+        putenv("{$key}={$val}");
+        $_ENV[$key] = $val;
+    }
+}
+
 putenv('DB_CONNECTION=mysql');
 $_ENV['DB_CONNECTION'] = 'mysql';
 
