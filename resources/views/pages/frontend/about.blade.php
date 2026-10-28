@@ -1,0 +1,8 @@
+@extends('pages.frontend.layout')
+@section('title', 'Tentang Kami | Toosmile Dental')
+@section('content')
+<section class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+    <div><p class="font-bold uppercase tracking-wider text-brand-blue">Tentang Toosmile</p><h1 class="mt-3 text-4xl font-extrabold lg:text-5xl">Perawatan gigi yang terasa lebih nyaman</h1><p class="mt-6 leading-7 text-slate-600">Toosmile Dental hadir untuk membantu keluarga menjaga kesehatan gigi melalui layanan yang ramah, penjelasan yang mudah dipahami, dan perawatan yang direncanakan sesuai kebutuhan pasien.</p><p class="mt-4 leading-7 text-slate-600">Kami percaya kunjungan ke dokter gigi bisa menjadi pengalaman yang tenang. Karena itu, tim kami siap mendengarkan kekhawatiranmu dan menjelaskan setiap langkah perawatan.</p><a href="{{ route('front.booking') }}" class="mt-8 inline-flex rounded-xl bg-brand-blue px-6 py-3 font-bold text-white">Hubungi kami</a></div>
+    <div class="rounded-3xl bg-white p-8 shadow-sm"><h2 class="text-2xl font-extrabold">Komitmen kami</h2><ul class="mt-6 space-y-5 text-slate-600"><li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1 text-brand-blue"></i><span>Penjelasan perawatan yang terbuka dan mudah dipahami.</span></li><li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1 text-brand-blue"></i><span>Lingkungan klinik yang bersih dan nyaman.</span></li><li class="flex gap-3"><i class="fa-solid fa-circle-check mt-1 text-brand-blue"></i><span>Rencana perawatan berdasarkan pemeriksaan dokter.</span></li></ul></div>
+</section>
+@endsection

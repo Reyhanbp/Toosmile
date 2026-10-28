@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toosmile Dental - Klinik Gigi Modern & Terpercaya</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            light: '#F2F7FF',
+                            blue: '#0B409C',
+                            dark: '#10316B',
+                            yellow: '#FDBE34',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
+
+    <!-- NAVBAR HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="{{ route('front.index') }}" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand-blue text-brand-yellow rounded-xl flex items-center justify-center shadow-lg text-xl font-bold">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-brand-dark">
+                    Too<span class="text-brand-blue">smile</span><span class="text-brand-yellow">.</span>
+                </span>
+            </a>
+
+            <!-- Navigasi Menu Terpisah -->
+            <nav class="hidden lg:flex items-center gap-6 font-semibold text-slate-600 text-sm">
+                <a href="{{ route('front.index') }}" class="text-brand-blue font-bold">Beranda</a>
+                <a href="{{ route('front.layanan') }}" class="hover:text-brand-blue transition">Layanan</a>
+                <a href="{{ route('front.dokter') }}" class="hover:text-brand-blue transition">Dokter</a>
+                <a href="{{ route('front.artikel') }}" class="hover:text-brand-blue transition">Artikel</a>
+                <a href="{{ route('front.promosi') }}" class="hover:text-brand-blue transition">Promosi</a>
+                <a href="{{ route('front.ulasan') }}" class="hover:text-brand-blue transition">Ulasan</a>
+                <a href="{{ route('front.about') }}" class="hover:text-brand-blue transition">Tentang Kami</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="{{ route('front.booking') }}" class="bg-brand-yellow hover:bg-amber-400 text-brand-dark font-extrabold px-5 py-2.5 rounded-xl shadow-md transition text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Booking Online
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="py-16 lg:py-24 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-brand-blue text-xs font-bold mb-6">
+                <i class="fa-solid fa-shield-halved text-brand-yellow"></i> Klinik Gigi Modern #1
+            </span>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-brand-dark leading-tight mb-6">
+                Senyum Percaya Diri Bersama <span class="text-brand-blue underline decoration-brand-yellow">Toosmile</span>
+            </h1>
+            <p class="text-slate-600 text-lg mb-8">
+                Layanan perawatan gigi lengkap dengan dokter spesialis profesional dan teknologi minim rasa sakit.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ route('front.booking') }}" class="bg-brand-blue hover:bg-blue-900 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2">
+                    Booking Online Sekarang <i class="fa-solid fa-arrow-right text-brand-yellow"></i>
+                </a>
+                <a href="{{ route('front.layanan') }}" class="bg-white hover:bg-slate-100 text-brand-dark font-semibold px-6 py-3.5 rounded-xl border border-slate-200 transition">
+                    Pilih Layanan
+                </a>
+            </div>
+        </div>
+
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000" alt="Toosmile Clinic" class="rounded-3xl shadow-2xl w-full h-[400px] object-cover">
+        </div>
+    </section>
+
+    <!-- NAVIGATION GRID (QUICK MENU FITUR) -->
+    <section class="py-12 bg-white border-y border-blue-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-2xl font-extrabold text-brand-dark mb-8">Jelajahi Layanan & Informasi Kami</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
+                <a href="{{ route('front.layanan') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-teeth text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">Pilih Layanan</span>
+                </a>
+                <a href="{{ route('front.dokter') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-user-doctor text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">Lihat Dokter</span>
+                </a>
+                <a href="{{ route('front.artikel') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-newspaper text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">Baca Artikel</span>
+                </a>
+                <a href="{{ route('front.promosi') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-tags text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">Lihat Promosi</span>
+                </a>
+                <a href="{{ route('front.ulasan') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-star text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">Lihat Ulasan</span>
+                </a>
+                <a href="{{ route('front.about') }}" class="p-5 bg-brand-light hover:bg-brand-blue hover:text-white rounded-2xl transition group border border-blue-100">
+                    <i class="fa-solid fa-hospital text-2xl text-brand-blue group-hover:text-brand-yellow mb-2 block"></i>
+                    <span class="text-xs font-bold">About Us</span>
+                </a>
+                <a href="{{ route('front.booking') }}" class="p-5 bg-brand-yellow hover:bg-amber-400 text-brand-dark rounded-2xl transition font-bold border border-amber-300">
+                    <i class="fa-solid fa-calendar-plus text-2xl text-brand-dark mb-2 block"></i>
+                    <span class="text-xs font-extrabold">Booking Online</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-300 py-8 text-center text-xs">
+        <p>© 2026 Toosmile Dental Clinic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

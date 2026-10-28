@@ -10,41 +10,47 @@ class MenuHelper
             [
                 'icon' => 'dashboard',
                 'name' => 'Dashboard',
-                'subItems' => [
-                    ['name' => 'Ecommerce', 'path' => '/'],
-                ],
+                'path' => '/dashboard',
             ],
             [
-                'icon' => 'calendar',
-                'name' => 'Calendar',
-                'path' => '/calendar',
+                'icon' => 'layanan',
+                'name' => 'Layanan',
+                'path' => '/layanan',
             ],
             [
-                'icon' => 'user-profile',
-                'name' => 'User Profile',
-                'path' => '/profile',
+                'icon' => 'dokter',
+                'name' => 'Dokter',
+                'path' => '/dokter',
             ],
             [
-                'name' => 'Forms',
-                'icon' => 'forms',
-                'subItems' => [
-                    ['name' => 'Form Elements', 'path' => '/form-elements', 'pro' => false],
-                ],
+                'icon' => 'artikel',
+                'name' => 'artikel',
+                'path' => '/artikel',
             ],
             [
-                'name' => 'Tables',
-                'icon' => 'tables',
-                'subItems' => [
-                    ['name' => 'Basic Tables', 'path' => '/basic-tables', 'pro' => false]
-                ],
+                'icon' => 'category',
+                'name' => 'Category',
+                'path' => '/category',
             ],
             [
-                'name' => 'Pages',
-                'icon' => 'pages',
-                'subItems' => [
-                    ['name' => 'Blank Page', 'path' => '/blank', 'pro' => false],
-                    ['name' => '404 Error', 'path' => '/error-404', 'pro' => false]
-                ],
+                'icon' => 'promosi',
+                'name' => 'promosi',
+                'path' => '/promosi',
+            ],
+            [
+                'icon' => 'ulasan',
+                'name' => 'ulasan',
+                'path' => '/ulasan',
+            ],
+            [
+                'icon' => 'about',
+                'name' => 'about',
+                'path' => '/about',
+            ],
+            [
+                'icon' => 'booking',
+                'name' => 'booking',
+                'path' => '/booking',
             ],
         ];
     }
@@ -53,32 +59,29 @@ class MenuHelper
     {
         return [
             [
-                'icon' => 'charts',
-                'name' => 'Charts',
+                'icon' => 'data-master',
+                'name' => 'Data Master',
                 'subItems' => [
-                    ['name' => 'Line Chart', 'path' => '/line-chart', 'pro' => false],
-                    ['name' => 'Bar Chart', 'path' => '/bar-chart', 'pro' => false]
+                    ['name' => 'Data Admin', 'path' => '/data-admin', 'pro' => false],
+                    ['name' => 'Data Dokter', 'path' => '/data-dokter', 'pro' => false],
+                    ['name' => 'Data Pasien', 'path' => '/data-pasien', 'pro' => false],
                 ],
+
             ],
             [
-                'icon' => 'ui-elements',
-                'name' => 'UI Elements',
-                'subItems' => [
-                    ['name' => 'Alerts', 'path' => '/alerts', 'pro' => false],
-                    ['name' => 'Avatar', 'path' => '/avatars', 'pro' => false],
-                    ['name' => 'Badge', 'path' => '/badge', 'pro' => false],
-                    ['name' => 'Buttons', 'path' => '/buttons', 'pro' => false],
-                    ['name' => 'Images', 'path' => '/image', 'pro' => false],
-                    ['name' => 'Videos', 'path' => '/videos', 'pro' => false],
-                ],
+                'icon' => 'setting-landingpage',
+                'name' => 'Setting Landing Page',
+                'path' => '/setting-landingpage'
+
             ],
             [
-                'icon' => 'authentication',
-                'name' => 'Authentication',
+                'icon' => 'setting',
+                'name' => 'Setting',
                 'subItems' => [
-                    ['name' => 'Sign In', 'path' => '/signin', 'pro' => false],
-                    ['name' => 'Sign Up', 'path' => '/signup', 'pro' => false],
+                    ['name' => 'login', 'path' => '/login', 'pro' => false],
+                    ['name' => 'logout', 'path' => '/logout', 'pro' => false],
                 ],
+
             ],
         ];
     }
@@ -139,3 +142,4 @@ class MenuHelper
         return $icons[$iconName] ?? '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>';
     }
 }
+

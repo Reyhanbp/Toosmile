@@ -2,15 +2,33 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\AuthController;
+
 
 // Locale Switch Route
 Route::get('/locale/{locale}', [LocaleController::class, 'switch'])->name('locale.switch');
-use App\Http\Controllers\DashboardController;
 
-// dashboard pages
-Route::get('/', function () {
-    return view('pages.dashboard.ecommerce', ['title' => 'E-commerce Dashboard']);
-})->name('dashboard');
+// frontend pages
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
+
+// Halaman Fitur Terpisah
+Route::get('/layanan', [FrontController::class, 'layanan'])->name('front.layanan');
+Route::get('/dokter', [FrontController::class, 'dokter'])->name('front.dokter');
+Route::get('/artikel', [FrontController::class, 'artikel'])->name('front.artikel');
+Route::get('/promosi', [FrontController::class, 'promosi'])->name('front.promosi');
+Route::get('/ulasan', [FrontController::class, 'ulasan'])->name('front.ulasan');
+Route::get('/about', [FrontController::class, 'about'])->name('front.about');
+Route::get('/booking', [FrontController::class, 'booking'])->name('front.booking');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'create'])->name('login');
+    Route::post('/login', [AuthController::class, 'store'])->name('login.store');
+});
+Route::post('/logout', [AuthController::class, 'destroy'])->middleware('auth')->name('logout');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 // calender pages
 Route::get('/calendar', function () {
@@ -54,9 +72,7 @@ Route::get('/bar-chart', function () {
 
 
 // authentication pages
-Route::get('/signin', function () {
-    return view('pages.auth.signin', ['title' => 'Sign In']);
-})->name('signin');
+Route::redirect('/signin', '/login')->name('signin');
 
 Route::get('/signup', function () {
     return view('pages.auth.signup', ['title' => 'Sign Up']);
